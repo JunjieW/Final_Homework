@@ -2716,9 +2716,9 @@ BOOL CAdoRecordSet::AddNew(CADORecordBinding &pAdoRecordBinding)
 	-----------------------------------------------------
 	Remarks: 返回位置。
 ==========================================================================*/
-long CAdoRecordSet::GetCursorPos()
+long CAdoRecordSet::GetCursorPos()//这个函数到底在干嘛？
 {
-	long count = m_p_record_set->GetRecordCount();
+	long count = m_p_record_set->GetRecordCount();//遍历记录集，记录个数 2012-11-27 by_JJ
 	while (!m_p_record_set->adoEOF)
 	{
 		m_p_record_set->MoveNext();
@@ -2782,7 +2782,7 @@ BOOL CAdoRecordSet::GetFieldValues(CStringArray *array, int index ,BOOL lockCurs
 //
 	if (lockCursorPos)
 	{
-		pos= GetCursorPos();
+		pos= GetCursorPos();//这个函数内部有问题，里面调用了一个东西，但是却好像不存在,所以参数是TRUE的时候，总是运行时出错 2012-11-27 JJ
 	}
 	array->RemoveAll();
 //	m_p_record_set->MoveFirst();
@@ -2801,7 +2801,7 @@ BOOL CAdoRecordSet::GetFieldValues(CStringArray *array, int index ,BOOL lockCurs
 			flag = FALSE;
 			break;
 		}
-		m_p_record_set->MoveNext();
+		//m_p_record_set->MoveNext();//为了个人使用而修改2012-11-27 JJ
 	}
 
 	if (lockCursorPos)

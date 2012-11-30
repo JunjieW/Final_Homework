@@ -21,4 +21,25 @@ protected:
 public:
 	virtual BOOL OnInitDialog();
 
+
+	//CString m_bookname;
+	CEdit m_bookname;
+//	CEdit m_barcode;
+	CEdit m_searchbarcode;
+	CEdit m_barcodeinfo;
+	CEdit m_searchbookname;
+//	CListCtrl m_list_readerinfo;
+	CListCtrl m_list_readerinfo;
+	CListCtrl m_list_bookinfo;
+//	CEdit m_ISBN;
+//	CEdit m_bookname;
+	CEdit m_isbn;
+	CEdit m_publish;
+	CEdit m_publishtime;
+	CEdit m_writter;
+	CEdit m_importtime;
+	CEdit m_availiable;
+	CEdit m_position;
+
+	afx_msg void OnBnClickedButton7();
 };

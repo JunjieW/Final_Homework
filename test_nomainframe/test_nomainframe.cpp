@@ -157,7 +157,7 @@ BOOL Ctest_nomainframeApp::InitInstance()
 		sheet.AddPage(&page2);
 		sheet.AddPage(&page3);
 		sheet.AddPage(&page6);	
-		
+
 		m_pMainWnd = &sheet;//这句一定要在所有的属性页创建忘之后才写，估计是在创建完之后，才能确定这个线程分配多少内存
 		sheet.DoModal();
 	}
